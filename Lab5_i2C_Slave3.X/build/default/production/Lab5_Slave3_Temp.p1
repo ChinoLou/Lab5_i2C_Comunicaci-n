@@ -1,88 +1,157 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"56 i2C_Master.c
-[; ;i2C_Master.c: 56: void setup(void);
-[v _setup `(v ~T0 @X0 0 ef ]
-"18 ./Library_LCD.h
-[; ;./Library_LCD.h: 18: void LCD_iniciar(void);
-[v _LCD_iniciar `(v ~T0 @X0 0 ef ]
-"19
-[; ;./Library_LCD.h: 19: void LCD_CLEAR(void);
-[v _LCD_CLEAR `(v ~T0 @X0 0 ef ]
-"20
-[; ;./Library_LCD.h: 20: void LCD_CURSOR(int a, int b);
-[v _LCD_CURSOR `(v ~T0 @X0 0 ef2`i`i ]
-"22
-[; ;./Library_LCD.h: 22: void LCD_STRING(char *a);
-[v _LCD_STRING `(v ~T0 @X0 0 ef1`*uc ]
-"41 ./I2C.h
-[; ;./I2C.h: 41: void I2C_Master_Start(void);
-[v _I2C_Master_Start `(v ~T0 @X0 0 ef ]
-"55
-[; ;./I2C.h: 55: void I2C_Master_Write(unsigned d);
-[v _I2C_Master_Write `(v ~T0 @X0 0 ef1`ui ]
-"60
-[; ;./I2C.h: 60: unsigned short I2C_Master_Read(unsigned short a);
-[v _I2C_Master_Read `(us ~T0 @X0 0 ef1`us ]
-"49
-[; ;./I2C.h: 49: void I2C_Master_Stop(void);
-[v _I2C_Master_Stop `(v ~T0 @X0 0 ef ]
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+"543 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 543:     struct {
+[s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S19 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ]
+"542
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 542: typedef union {
+[u S18 `S19 1 ]
+[n S18 . . ]
+"553
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 553: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x00C)));
+[v _PIR1bits `VS18 ~T0 @X0 0 e@12 ]
+"856
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 856:     struct {
+[s S30 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S30 . SSPM CKP SSPEN SSPOV WCOL ]
+"863
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 863:     struct {
+[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S31 . SSPM0 SSPM1 SSPM2 SSPM3 ]
+"855
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 855: typedef union {
+[u S29 `S30 1 `S31 1 ]
+[n S29 . . . ]
+"870
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 870: extern volatile SSPCONbits_t SSPCONbits __attribute__((address(0x014)));
+[v _SSPCONbits `VS29 ~T0 @X0 0 e@20 ]
+"843
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 843: extern volatile unsigned char SSPBUF __attribute__((address(0x013)));
+[v _SSPBUF `Vuc ~T0 @X0 0 e@19 ]
+"2183
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2183:     struct {
+[s S82 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S82 . BF UA R_nW S P D_nA CKE SMP ]
+"2193
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2193:     struct {
+[s S83 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S83 . . R . D ]
+"2199
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2199:     struct {
+[s S84 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S84 . . I2C_READ I2C_START I2C_STOP I2C_DATA ]
+"2206
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2206:     struct {
+[s S85 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S85 . . nW . nA ]
+"2212
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2212:     struct {
+[s S86 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S86 . . nWRITE . nADDRESS ]
+"2218
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2218:     struct {
+[s S87 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S87 . . R_W . D_A ]
+"2224
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2224:     struct {
+[s S88 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S88 . . READ_WRITE . DATA_ADDRESS ]
+"2182
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2182: typedef union {
+[u S81 `S82 1 `S83 1 `S84 1 `S85 1 `S86 1 `S87 1 `S88 1 ]
+[n S81 . . . . . . . . ]
+"2231
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2231: extern volatile SSPSTATbits_t SSPSTATbits __attribute__((address(0x094)));
+[v _SSPSTATbits `VS81 ~T0 @X0 0 e@148 ]
+"3641
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3641: extern volatile __bit BF __attribute__((address(0x4A0)));
+[v _BF `Vb ~T0 @X0 0 e@1184 ]
 [v F1256 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
 [v __delay `JF1256 ~T0 @X0 0 e ]
 [p i __delay ]
-"352 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
-[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
-"57 i2C_Master.c
-[; ;i2C_Master.c: 57: uint16_t *mapeo(uint8_t valor, uint8_t limPIC, uint8_t limFisico);
-[v _mapeo `(*ui ~T0 @X0 0 ef3`uc`uc`uc ]
-"21 ./Library_LCD.h
-[; ;./Library_LCD.h: 21: void LCD_CHAR(char a);
-[v _LCD_CHAR `(v ~T0 @X0 0 ef1`uc ]
-"23
-[; ;./Library_LCD.h: 23: char uint_to_char(uint8_t numero);
-[v _uint_to_char `(uc ~T0 @X0 0 ef1`uc ]
-"3387 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[p mainexit ]
+"37 Lab5_Slave3_Temp.c
+[; ;Lab5_Slave3_Temp.c: 37: void init_config(void);
+[v _init_config `(v ~T0 @X0 0 ef ]
+"65 ./I2C.h
+[; ;./I2C.h: 65: void I2C_Slave_Init(uint8_t address);
+[v _I2C_Slave_Init `(v ~T0 @X0 0 ef1`uc ]
+"16 ./ADC_CH.h
+[; ;./ADC_CH.h: 16: void ADC_chanel(uint8_t channel);
+[v _ADC_chanel `(v ~T0 @X0 0 ef1`uc ]
+"1251 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1251:     struct {
+[s S45 :1 `uc 1 :1 `uc 1 :4 `uc 1 :2 `uc 1 ]
+[n S45 . ADON GO_nDONE CHS ADCS ]
+"1257
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1257:     struct {
+[s S46 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S46 . . GO CHS0 CHS1 CHS2 CHS3 ADCS0 ADCS1 ]
+"1267
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1267:     struct {
+[s S47 :1 `uc 1 :1 `uc 1 ]
+[n S47 . . nDONE ]
+"1271
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1271:     struct {
+[s S48 :1 `uc 1 :1 `uc 1 ]
+[n S48 . . GO_DONE ]
+"1250
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1250: typedef union {
+[u S44 `S45 1 `S46 1 `S47 1 `S48 1 ]
+[n S44 . . . . . ]
+"1276
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1276: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0x01F)));
+[v _ADCON0bits `VS44 ~T0 @X0 0 e@31 ]
+"1238
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1238: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
+[v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
+"1416
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
+[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
+"3387
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
 [v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
-"3449
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3449: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
-[v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
-"1422
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1422:     struct {
-[s S53 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S53 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
-"1421
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1421: typedef union {
-[u S52 `S53 1 ]
-[n S52 . . ]
-"1433
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1433: extern volatile TRISAbits_t TRISAbits __attribute__((address(0x085)));
-[v _TRISAbits `VS52 ~T0 @X0 0 e@133 ]
 "1478
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1478: extern volatile unsigned char TRISB __attribute__((address(0x086)));
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
-"1602
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1602: extern volatile unsigned char TRISD __attribute__((address(0x088)));
-[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
+"3449
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3449: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
+[v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
+"2977
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2977: extern volatile unsigned char ADCON1 __attribute__((address(0x09F)));
+[v _ADCON1 `Vuc ~T0 @X0 0 e@159 ]
 "166
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
 [v _PORTA `Vuc ~T0 @X0 0 e@5 ]
 "228
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
 [v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-"29 ./I2C.h
-[; ;./I2C.h: 29: void I2C_Master_Init(const unsigned long c);
-[v _I2C_Master_Init `(v ~T0 @X0 0 ef1`Cul ]
-"9 i2C_Master.c
+"465
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 465:     struct {
+[s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S16 . RBIF INTF T0IF RBIE INTE T0IE PEIE GIE ]
+"475
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 475:     struct {
+[s S17 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S17 . . TMR0IF . TMR0IE ]
+"464
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 464: typedef union {
+[u S15 `S16 1 `S17 1 ]
+[n S15 . . . ]
+"482
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 482: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
+[v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
+"9 Lab5_Slave3_Temp.c
 [p x FOSC = INTRC_CLKOUT ]
 "10
 [p x WDTE = OFF ]
 "11
 [p x PWRTE = OFF ]
 "12
-[p x MCLRE = OFF ]
+[p x MCLRE = ON ]
 "13
 [p x CP = OFF ]
 "14
@@ -333,308 +402,174 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"46 i2C_Master.c
-[; ;i2C_Master.c: 46: uint8_t Val_ADC = 0;
-[v _Val_ADC `uc ~T0 @X0 1 e ]
-[i _Val_ADC
--> -> 0 `i `uc
-]
-"47
-[; ;i2C_Master.c: 47: uint8_t ADC_Temp = 0;
+"33 Lab5_Slave3_Temp.c
+[; ;Lab5_Slave3_Temp.c: 33: uint8_t ADC_Temp = 0;
 [v _ADC_Temp `uc ~T0 @X0 1 e ]
 [i _ADC_Temp
 -> -> 0 `i `uc
 ]
-"48
-[; ;i2C_Master.c: 48: uint8_t Val_Cont = 0;
-[v _Val_Cont `uc ~T0 @X0 1 e ]
-[i _Val_Cont
+"34
+[; ;Lab5_Slave3_Temp.c: 34: uint8_t z = 0;
+[v _z `uc ~T0 @X0 1 e ]
+[i _z
 -> -> 0 `i `uc
 ]
+[v $root$_isr `(v ~T0 @X0 0 e ]
+"42
+[; ;Lab5_Slave3_Temp.c: 42: void __attribute__((picinterrupt(("")))) isr(void){
+[v _isr `(v ~T1 @X0 1 ef ]
+{
+[e :U _isr ]
+[f ]
+"43
+[; ;Lab5_Slave3_Temp.c: 43:    if(PIR1bits.SSPIF == 1){
+[e $ ! == -> . . _PIR1bits 0 3 `i -> 1 `i 139  ]
+{
+"45
+[; ;Lab5_Slave3_Temp.c: 45:         SSPCONbits.CKP = 0;
+[e = . . _SSPCONbits 0 1 -> -> 0 `i `uc ]
+"47
+[; ;Lab5_Slave3_Temp.c: 47:         if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+[e $ ! || != -> . . _SSPCONbits 0 3 `i -> 0 `i != -> . . _SSPCONbits 0 4 `i -> 0 `i 140  ]
+{
+"48
+[; ;Lab5_Slave3_Temp.c: 48:             z = SSPBUF;
+[e = _z _SSPBUF ]
 "49
-[; ;i2C_Master.c: 49: uint16_t *voltaje_map = 0;
-[v _voltaje_map `*ui ~T0 @X0 1 e ]
-[i _voltaje_map
--> -> 0 `i `*ui
-]
+[; ;Lab5_Slave3_Temp.c: 49:             SSPCONbits.SSPOV = 0;
+[e = . . _SSPCONbits 0 3 -> -> 0 `i `uc ]
 "50
-[; ;i2C_Master.c: 50: uint16_t *voltaje_temp = 0;
-[v _voltaje_temp `*ui ~T0 @X0 1 e ]
-[i _voltaje_temp
--> -> 0 `i `*ui
-]
+[; ;Lab5_Slave3_Temp.c: 50:             SSPCONbits.WCOL = 0;
+[e = . . _SSPCONbits 0 4 -> -> 0 `i `uc ]
+"51
+[; ;Lab5_Slave3_Temp.c: 51:             SSPCONbits.CKP = 1;
+[e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
+"52
+[; ;Lab5_Slave3_Temp.c: 52:         }
+}
+[e $U 141  ]
+"64
+[; ;Lab5_Slave3_Temp.c: 64:         else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+[e :U 140 ]
+[e $ ! && ! != -> . . _SSPSTATbits 0 5 `i -> 0 `i != -> . . _SSPSTATbits 0 2 `i -> 0 `i 142  ]
+{
+"65
+[; ;Lab5_Slave3_Temp.c: 65:             z = SSPBUF;
+[e = _z _SSPBUF ]
+"66
+[; ;Lab5_Slave3_Temp.c: 66:             BF = 0;
+[e = _BF -> -> 0 `i `b ]
+"67
+[; ;Lab5_Slave3_Temp.c: 67:             SSPBUF = ADC_Temp;
+[e = _SSPBUF _ADC_Temp ]
+"68
+[; ;Lab5_Slave3_Temp.c: 68:             SSPCONbits.CKP = 1;
+[e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
+"69
+[; ;Lab5_Slave3_Temp.c: 69:             _delay((unsigned long)((250)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"70
+[; ;Lab5_Slave3_Temp.c: 70:             while(SSPSTATbits.BF);
+[e $U 143  ]
+[e :U 144 ]
+[e :U 143 ]
+[e $ != -> . . _SSPSTATbits 0 0 `i -> 0 `i 144  ]
+[e :U 145 ]
+"71
+[; ;Lab5_Slave3_Temp.c: 71:         }
+}
+[e :U 142 ]
+[e :U 141 ]
+"73
+[; ;Lab5_Slave3_Temp.c: 73:         PIR1bits.SSPIF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"74
+[; ;Lab5_Slave3_Temp.c: 74:     }
+}
+[e :U 139 ]
+"75
+[; ;Lab5_Slave3_Temp.c: 75: }
+[e :UE 138 ]
+}
 [v $root$_main `(v ~T0 @X0 0 e ]
-"62
-[; ;i2C_Master.c: 62: void main(void) {
+"78
+[; ;Lab5_Slave3_Temp.c: 78: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"63
-[; ;i2C_Master.c: 63:     setup();
-[e ( _setup ..  ]
-"65
-[; ;i2C_Master.c: 65:     LCD_iniciar();
-[e ( _LCD_iniciar ..  ]
-"66
-[; ;i2C_Master.c: 66:     LCD_CLEAR();
-[e ( _LCD_CLEAR ..  ]
-"67
-[; ;i2C_Master.c: 67:     LCD_CURSOR(1,1);
-[e ( _LCD_CURSOR (2 , -> 1 `i -> 1 `i ]
-"68
-[; ;i2C_Master.c: 68:     LCD_STRING ("S1    S2   S3");
-[e ( _LCD_STRING (1 :s 1C ]
-"70
-[; ;i2C_Master.c: 70:     while(1){
-[e :U 141 ]
-{
-"72
-[; ;i2C_Master.c: 72:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"73
-[; ;i2C_Master.c: 73:         I2C_Master_Write(0x51);
-[e ( _I2C_Master_Write (1 -> -> 81 `i `ui ]
-"74
-[; ;i2C_Master.c: 74:         Val_ADC = I2C_Master_Read(0);
-[e = _Val_ADC -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
-"75
-[; ;i2C_Master.c: 75:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"76
-[; ;i2C_Master.c: 76:         _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"79
+[; ;Lab5_Slave3_Temp.c: 79:     init_config();
+[e ( _init_config ..  ]
 "80
-[; ;i2C_Master.c: 80:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"81
-[; ;i2C_Master.c: 81:         I2C_Master_Write(0x61);
-[e ( _I2C_Master_Write (1 -> -> 97 `i `ui ]
+[; ;Lab5_Slave3_Temp.c: 80:     I2C_Slave_Init(0x70);
+[e ( _I2C_Slave_Init (1 -> -> 112 `i `uc ]
 "82
-[; ;i2C_Master.c: 82:         PORTD = I2C_Master_Read(0);
-[e = _PORTD -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
-"83
-[; ;i2C_Master.c: 83:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
+[; ;Lab5_Slave3_Temp.c: 82:     while(1){
+[e :U 148 ]
+{
 "84
-[; ;i2C_Master.c: 84:         _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+[; ;Lab5_Slave3_Temp.c: 84:         ADC_chanel(0);
+[e ( _ADC_chanel (1 -> -> 0 `i `uc ]
+"85
+[; ;Lab5_Slave3_Temp.c: 85:         PIR1bits.ADIF = 0;
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
 "86
-[; ;i2C_Master.c: 86:         Val_Cont = PORTD;
-[e = _Val_Cont _PORTD ]
-"88
-[; ;i2C_Master.c: 88:         I2C_Master_Start();
-[e ( _I2C_Master_Start ..  ]
-"89
-[; ;i2C_Master.c: 89:         I2C_Master_Write(0x71);
-[e ( _I2C_Master_Write (1 -> -> 113 `i `ui ]
+[; ;Lab5_Slave3_Temp.c: 86:         ADCON0bits.GO = 1;
+[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
+"87
+[; ;Lab5_Slave3_Temp.c: 87:         ADC_Temp = ADRESH;
+[e = _ADC_Temp _ADRESH ]
 "90
-[; ;i2C_Master.c: 90:         ADC_Temp = I2C_Master_Read(0);
-[e = _ADC_Temp -> ( _I2C_Master_Read (1 -> -> 0 `i `us `uc ]
+[; ;Lab5_Slave3_Temp.c: 90:         _delay((unsigned long)((5)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "91
-[; ;i2C_Master.c: 91:         I2C_Master_Stop();
-[e ( _I2C_Master_Stop ..  ]
-"92
-[; ;i2C_Master.c: 92:         _delay((unsigned long)((10)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"94
-[; ;i2C_Master.c: 94:         ADC_Temp = ADC_Temp*10;
-[e = _ADC_Temp -> * -> _ADC_Temp `i -> 10 `i `uc ]
-"97
-[; ;i2C_Master.c: 97:         voltaje_map = mapeo(Val_ADC, 255, 5);
-[e = _voltaje_map ( _mapeo (3 , , _Val_ADC -> -> 255 `i `uc -> -> 5 `i `uc ]
-"98
-[; ;i2C_Master.c: 98:         LCD_CURSOR(2,1);
-[e ( _LCD_CURSOR (2 , -> 2 `i -> 1 `i ]
-"99
-[; ;i2C_Master.c: 99:         LCD_CHAR(uint_to_char(voltaje_map[0]));
-[e ( _LCD_CHAR (1 ( _uint_to_char (1 -> *U + _voltaje_map * -> -> 0 `i `x -> -> # *U _voltaje_map `i `x `uc ]
-"100
-[; ;i2C_Master.c: 100:         LCD_CHAR('.');
-[e ( _LCD_CHAR (1 -> -> 46 `ui `uc ]
-"101
-[; ;i2C_Master.c: 101:         LCD_CHAR(uint_to_char(voltaje_map[1]));
-[e ( _LCD_CHAR (1 ( _uint_to_char (1 -> *U + _voltaje_map * -> -> 1 `i `x -> -> # *U _voltaje_map `i `x `uc ]
-"102
-[; ;i2C_Master.c: 102:         LCD_CHAR(uint_to_char(voltaje_map[2]));
-[e ( _LCD_CHAR (1 ( _uint_to_char (1 -> *U + _voltaje_map * -> -> 2 `i `x -> -> # *U _voltaje_map `i `x `uc ]
-"103
-[; ;i2C_Master.c: 103:         LCD_CHAR('V');
-[e ( _LCD_CHAR (1 -> -> 86 `ui `uc ]
-"105
-[; ;i2C_Master.c: 105:         LCD_CURSOR(2,7);
-[e ( _LCD_CURSOR (2 , -> 2 `i -> 7 `i ]
-"106
-[; ;i2C_Master.c: 106:         LCD_CHAR(uint_to_char(Val_Cont));
-[e ( _LCD_CHAR (1 ( _uint_to_char (1 _Val_Cont ]
-"109
-[; ;i2C_Master.c: 109:         voltaje_temp = mapeo(ADC_Temp, 255, 5);
-[e = _voltaje_temp ( _mapeo (3 , , _ADC_Temp -> -> 255 `i `uc -> -> 5 `i `uc ]
-"110
-[; ;i2C_Master.c: 110:         LCD_CURSOR(2,12);
-[e ( _LCD_CURSOR (2 , -> 2 `i -> 12 `i ]
-"111
-[; ;i2C_Master.c: 111:         LCD_CHAR(uint_to_char(voltaje_temp[0]));
-[e ( _LCD_CHAR (1 ( _uint_to_char (1 -> *U + _voltaje_temp * -> -> 0 `i `x -> -> # *U _voltaje_temp `i `x `uc ]
-"112
-[; ;i2C_Master.c: 112:         LCD_CHAR(uint_to_char(voltaje_temp[1]));
-[e ( _LCD_CHAR (1 ( _uint_to_char (1 -> *U + _voltaje_temp * -> -> 1 `i `x -> -> # *U _voltaje_temp `i `x `uc ]
-"113
-[; ;i2C_Master.c: 113:         LCD_CHAR('.');
-[e ( _LCD_CHAR (1 -> -> 46 `ui `uc ]
-"114
-[; ;i2C_Master.c: 114:         LCD_CHAR(uint_to_char(voltaje_temp[2]));
-[e ( _LCD_CHAR (1 ( _uint_to_char (1 -> *U + _voltaje_temp * -> -> 2 `i `x -> -> # *U _voltaje_temp `i `x `uc ]
-"115
-[; ;i2C_Master.c: 115:         LCD_CHAR('C');
-[e ( _LCD_CHAR (1 -> -> 67 `ui `uc ]
-"118
-[; ;i2C_Master.c: 118:     }
+[; ;Lab5_Slave3_Temp.c: 91:     }
 }
-[e :U 140 ]
-[e $U 141  ]
-[e :U 142 ]
-"119
-[; ;i2C_Master.c: 119:     return;
-[e $UE 139  ]
-"120
-[; ;i2C_Master.c: 120: }
-[e :UE 139 ]
-}
-"124
-[; ;i2C_Master.c: 124: void setup(void){
-[v _setup `(v ~T0 @X0 1 ef ]
-{
-[e :U _setup ]
-[f ]
-"125
-[; ;i2C_Master.c: 125:     ANSEL = 0;
-[e = _ANSEL -> -> 0 `i `uc ]
-"126
-[; ;i2C_Master.c: 126:     ANSELH = 0;
-[e = _ANSELH -> -> 0 `i `uc ]
-"128
-[; ;i2C_Master.c: 128:     TRISAbits.TRISA3 = 0;
-[e = . . _TRISAbits 0 3 -> -> 0 `i `uc ]
-"129
-[; ;i2C_Master.c: 129:     TRISAbits.TRISA4 = 0;
-[e = . . _TRISAbits 0 4 -> -> 0 `i `uc ]
-"130
-[; ;i2C_Master.c: 130:     TRISB = 0;
-[e = _TRISB -> -> 0 `i `uc ]
-"131
-[; ;i2C_Master.c: 131:     TRISD = 0;
-[e = _TRISD -> -> 0 `i `uc ]
-"134
-[; ;i2C_Master.c: 134:     PORTA = 0;
-[e = _PORTA -> -> 0 `i `uc ]
-"135
-[; ;i2C_Master.c: 135:     PORTB = 0;
-[e = _PORTB -> -> 0 `i `uc ]
-"136
-[; ;i2C_Master.c: 136:     PORTD = 0;
-[e = _PORTD -> -> 0 `i `uc ]
-"138
-[; ;i2C_Master.c: 138:     I2C_Master_Init(100000);
-[e ( _I2C_Master_Init (1 -> -> 100000 `l `ul ]
-"139
-[; ;i2C_Master.c: 139: }
-[e :UE 143 ]
-}
-"144
-[; ;i2C_Master.c: 144: uint16_t *mapeo(uint8_t valor, uint8_t limPIC, uint8_t limFisico){
-[v _mapeo `(*ui ~T0 @X0 1 ef3`uc`uc`uc ]
-{
-[e :U _mapeo ]
-[v _valor `uc ~T0 @X0 1 r1 ]
-[v _limPIC `uc ~T0 @X0 1 r2 ]
-[v _limFisico `uc ~T0 @X0 1 r3 ]
-[f ]
-[v F1390 `ui ~T0 @X0 -> 3 `i s ]
-[i F1390
-:U ..
-"145
-[; ;i2C_Master.c: 145:     uint16_t result[3] = {0,0,0};
--> -> 0 `i `ui
--> -> 0 `i `ui
--> -> 0 `i `ui
-..
-]
-[v _result `ui ~T0 @X0 -> 3 `i a ]
-[e = _result F1390 ]
-"146
-[; ;i2C_Master.c: 146:     uint16_t dividendo = valor*limFisico;
-[v _dividendo `ui ~T0 @X0 1 a ]
-[e = _dividendo -> * -> _valor `i -> _limFisico `i `ui ]
-"147
-[; ;i2C_Master.c: 147:     while (limPIC <= dividendo){
-[e $U 145  ]
-[e :U 146 ]
-{
-"148
-[; ;i2C_Master.c: 148:         result[0] = result[0] + 1;
-[e = *U + &U _result * -> -> -> 0 `i `ui `ux -> -> # *U &U _result `ui `ux + *U + &U _result * -> -> -> 0 `i `ui `ux -> -> # *U &U _result `ui `ux -> -> 1 `i `ui ]
-"149
-[; ;i2C_Master.c: 149:         dividendo = dividendo - limPIC;
-[e = _dividendo - _dividendo -> _limPIC `ui ]
-"150
-[; ;i2C_Master.c: 150:     }
-}
-[e :U 145 ]
-"147
-[; ;i2C_Master.c: 147:     while (limPIC <= dividendo){
-[e $ <= -> _limPIC `ui _dividendo 146  ]
 [e :U 147 ]
-"151
-[; ;i2C_Master.c: 151:     dividendo = dividendo *10;
-[e = _dividendo * _dividendo -> -> 10 `i `ui ]
-"152
-[; ;i2C_Master.c: 152:     while (limPIC <= dividendo){
 [e $U 148  ]
 [e :U 149 ]
+"92
+[; ;Lab5_Slave3_Temp.c: 92:     return;
+[e $UE 146  ]
+"93
+[; ;Lab5_Slave3_Temp.c: 93: }
+[e :UE 146 ]
+}
+"96
+[; ;Lab5_Slave3_Temp.c: 96: void init_config(void){
+[v _init_config `(v ~T0 @X0 1 ef ]
 {
-"153
-[; ;i2C_Master.c: 153:         result[1] = result[1] +1;
-[e = *U + &U _result * -> -> -> 1 `i `ui `ux -> -> # *U &U _result `ui `ux + *U + &U _result * -> -> -> 1 `i `ui `ux -> -> # *U &U _result `ui `ux -> -> 1 `i `ui ]
-"154
-[; ;i2C_Master.c: 154:         dividendo = dividendo - limPIC;
-[e = _dividendo - _dividendo -> _limPIC `ui ]
-"155
-[; ;i2C_Master.c: 155:     }
+[e :U _init_config ]
+[f ]
+"97
+[; ;Lab5_Slave3_Temp.c: 97:     TRISA = 0b00000001;
+[e = _TRISA -> -> 1 `i `uc ]
+"98
+[; ;Lab5_Slave3_Temp.c: 98:     ANSEL = 0b00000001;
+[e = _ANSEL -> -> 1 `i `uc ]
+"99
+[; ;Lab5_Slave3_Temp.c: 99:     TRISB = 0x00;
+[e = _TRISB -> -> 0 `i `uc ]
+"100
+[; ;Lab5_Slave3_Temp.c: 100:     ANSELH = 0x00;
+[e = _ANSELH -> -> 0 `i `uc ]
+"101
+[; ;Lab5_Slave3_Temp.c: 101:     ADCON1 = 0;
+[e = _ADCON1 -> -> 0 `i `uc ]
+"103
+[; ;Lab5_Slave3_Temp.c: 103:     PORTA = 0;
+[e = _PORTA -> -> 0 `i `uc ]
+"104
+[; ;Lab5_Slave3_Temp.c: 104:     PORTB = 0x00;
+[e = _PORTB -> -> 0 `i `uc ]
+"106
+[; ;Lab5_Slave3_Temp.c: 106:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+"107
+[; ;Lab5_Slave3_Temp.c: 107:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"109
+[; ;Lab5_Slave3_Temp.c: 109:    }
+[e :UE 150 ]
 }
-[e :U 148 ]
-"152
-[; ;i2C_Master.c: 152:     while (limPIC <= dividendo){
-[e $ <= -> _limPIC `ui _dividendo 149  ]
-[e :U 150 ]
-"156
-[; ;i2C_Master.c: 156:     dividendo = dividendo *10;
-[e = _dividendo * _dividendo -> -> 10 `i `ui ]
-"157
-[; ;i2C_Master.c: 157:     while (limPIC <= dividendo){
-[e $U 151  ]
-[e :U 152 ]
-{
-"158
-[; ;i2C_Master.c: 158:         result[2] = result[2] +1;
-[e = *U + &U _result * -> -> -> 2 `i `ui `ux -> -> # *U &U _result `ui `ux + *U + &U _result * -> -> -> 2 `i `ui `ux -> -> # *U &U _result `ui `ux -> -> 1 `i `ui ]
-"159
-[; ;i2C_Master.c: 159:         dividendo = dividendo - limPIC;
-[e = _dividendo - _dividendo -> _limPIC `ui ]
-"160
-[; ;i2C_Master.c: 160:     }
-}
-[e :U 151 ]
-"157
-[; ;i2C_Master.c: 157:     while (limPIC <= dividendo){
-[e $ <= -> _limPIC `ui _dividendo 152  ]
-[e :U 153 ]
-"162
-[; ;i2C_Master.c: 162:     return(result);
-[e ) &U _result ]
-[e $UE 144  ]
-"163
-[; ;i2C_Master.c: 163: }
-[e :UE 144 ]
-}
-[a 1C 83 49 32 32 32 32 83 50 32 32 32 83 51 0 ]

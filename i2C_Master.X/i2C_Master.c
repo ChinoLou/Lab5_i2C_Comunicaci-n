@@ -44,8 +44,11 @@
 
 //------- Definición de Variables Globales -----// 
 uint8_t  Val_ADC      = 0;
+uint8_t  ADC_Temp     = 0;
 uint8_t  Val_Cont     = 0;
 uint16_t *voltaje_map = 0; // Definicion del Array de Mapeo para el Pot con Punteros!
+uint16_t *voltaje_temp = 0; 
+
 
 
 
@@ -74,7 +77,7 @@ void main(void) {
 
         
                                         //Comunicación con el Slave 2 (Contador)
-        I2C_Master_Start();             //Leectura de datos "porque el último bit del 0x50 esta en 1 --> 0x51!        
+        I2C_Master_Start();             //Leectura de datos "porque el último bit del 0x50 esta en 1 --> 0x61!        
         I2C_Master_Write(0x61);         //Dirección del esclavo con el bit de lectura de datos 0x51 !
         PORTD = I2C_Master_Read(0);     //porque manda ACKDT = 1 (SIGNIFICA Not Acknowledge) ??
         I2C_Master_Stop();
@@ -82,9 +85,13 @@ void main(void) {
         
         Val_Cont = PORTD; 
         
-        
-        
-    
+        I2C_Master_Start();             //Leectura de datos "porque el último bit del 0x50 esta en 1 --> 0x71!        
+        I2C_Master_Write(0x71);         //Dirección del esclavo con el bit de lectura de datos 0x51 !
+        ADC_Temp = I2C_Master_Read(0);  //porque manda ACKDT = 1 (SIGNIFICA Not Acknowledge) ??
+        I2C_Master_Stop();
+        __delay_ms(10);
+
+        ADC_Temp = ADC_Temp*10;         //Se multiplica por 10 para tener el valor en °C (LM35 10mV /°C) 
         
                                                            
         voltaje_map = mapeo(Val_ADC, 255, 5);               //Se muestra en la LCD el Sensor 1
@@ -97,7 +104,16 @@ void main(void) {
         
         LCD_CURSOR(2,7);                                    //Se muestra en la LCD el Sensor 2
         LCD_CHAR(uint_to_char(Val_Cont));
- 
+        
+        
+        voltaje_temp = mapeo(ADC_Temp, 255, 5);             // Mapeo del Sensor 3 (LM35)
+        LCD_CURSOR(2,12);
+        LCD_CHAR(uint_to_char(voltaje_temp[0]));            //Se muestra en la LCD el Sensor 2
+        LCD_CHAR(uint_to_char(voltaje_temp[1]));
+        LCD_CHAR('.');
+        LCD_CHAR(uint_to_char(voltaje_temp[2]));
+        LCD_CHAR('C');
+       // LCD_STRING(lcd_valor);
         
     }
     return;

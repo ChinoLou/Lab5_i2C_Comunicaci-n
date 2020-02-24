@@ -1,4 +1,4 @@
-# 1 "i2C_Master.c"
+# 1 "I2C.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,30 +6,10 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "i2C_Master.c" 2
-
-
-
-
-
-
-
-
-#pragma config FOSC = INTRC_CLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-# 37 "i2C_Master.c"
+# 1 "I2C.c" 2
+# 12 "I2C.c"
+# 1 "./I2C.h" 1
+# 18 "./I2C.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2514,7 +2494,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 37 "i2C_Master.c" 2
+# 19 "./I2C.h" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
@@ -2649,119 +2629,8 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 38 "i2C_Master.c" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 1 3
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\__size_t.h" 1 3
-
-
-
-typedef unsigned size_t;
-# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 2 3
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\__null.h" 1 3
-# 5 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 2 3
-
-
-
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdarg.h" 1 3
-
-
-
-
-
-
-typedef void * va_list[1];
-
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-# 11 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 2 3
-# 43 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 3
-struct __prbuf
-{
- char * ptr;
- void (* func)(char);
-};
-# 85 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\conio.h" 1 3
-
-
-
-
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\errno.h" 1 3
-# 29 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\errno.h" 3
-extern int errno;
-# 8 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\conio.h" 2 3
-
-
-
-
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-
-
-extern char * cgets(char *);
-extern void cputs(const char *);
-# 85 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 2 3
-
-
-
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-# 180 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 3
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-# 39 "i2C_Master.c" 2
-
-# 1 "./I2C.h" 1
-# 20 "./I2C.h"
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
 # 21 "./I2C.h" 2
-
-
-
-
-
-
-
-
+# 30 "./I2C.h"
 void I2C_Master_Init(const unsigned long c);
 
 
@@ -2798,138 +2667,97 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 
 void I2C_Slave_Init(uint8_t address);
-# 40 "i2C_Master.c" 2
-
-# 1 "./Library_LCD.h" 1
-# 17 "./Library_LCD.h"
-void LCD_DATO(int var);
-void LCD_iniciar(void);
-void LCD_CLEAR(void);
-void LCD_CURSOR(int a, int b);
-void LCD_CHAR(char a);
-void LCD_STRING(char *a);
-char uint_to_char(uint8_t numero);
-# 41 "i2C_Master.c" 2
+# 13 "I2C.c" 2
 
 
 
-
-
-uint8_t Val_ADC = 0;
-uint8_t ADC_Temp = 0;
-uint8_t Val_Cont = 0;
-uint16_t *voltaje_map = 0;
-uint16_t *voltaje_temp = 0;
-
-
-
-
-
-void setup(void);
-uint16_t *mapeo(uint8_t valor, uint8_t limPIC, uint8_t limFisico);
-
-
-
-
-void main(void) {
-    setup();
-
-    LCD_iniciar();
-    LCD_CLEAR();
-    LCD_CURSOR(1,1);
-    LCD_STRING ("S1    S2   S3");
-
-    while(1){
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x51);
-        Val_ADC = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((10)*(8000000/4000.0)));
-
-
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x61);
-        PORTD = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((10)*(8000000/4000.0)));
-
-        Val_Cont = PORTD;
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x71);
-        ADC_Temp = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((10)*(8000000/4000.0)));
-
-        ADC_Temp = ADC_Temp*10;
-
-
-        voltaje_map = mapeo(Val_ADC, 255, 5);
-        LCD_CURSOR(2,1);
-        LCD_CHAR(uint_to_char(voltaje_map[0]));
-        LCD_CHAR('.');
-        LCD_CHAR(uint_to_char(voltaje_map[1]));
-        LCD_CHAR(uint_to_char(voltaje_map[2]));
-        LCD_CHAR('V');
-
-        LCD_CURSOR(2,7);
-        LCD_CHAR(uint_to_char(Val_Cont));
-
-
-        voltaje_temp = mapeo(ADC_Temp, 255, 5);
-        LCD_CURSOR(2,12);
-        LCD_CHAR(uint_to_char(voltaje_temp[0]));
-        LCD_CHAR(uint_to_char(voltaje_temp[1]));
-        LCD_CHAR('.');
-        LCD_CHAR(uint_to_char(voltaje_temp[2]));
-        LCD_CHAR('C');
-
-
-    }
-    return;
-}
-
-
-
-void setup(void){
-    ANSEL = 0;
-    ANSELH = 0;
-
-    TRISAbits.TRISA3 = 0;
-    TRISAbits.TRISA4 = 0;
-    TRISB = 0;
-    TRISD = 0;
-
-
-    PORTA = 0;
-    PORTB = 0;
-    PORTD = 0;
-
-    I2C_Master_Init(100000);
+void I2C_Master_Init(const unsigned long c)
+{
+    SSPCON = 0b00101000;
+    SSPCON2 = 0;
+    SSPADD = (8000000/(4*c))-1;
+    SSPSTAT = 0;
+    TRISCbits.TRISC3 = 1;
+    TRISCbits.TRISC4 = 1;
 }
 
 
 
 
-uint16_t *mapeo(uint8_t valor, uint8_t limPIC, uint8_t limFisico){
-    uint16_t result[3] = {0,0,0};
-    uint16_t dividendo = valor*limFisico;
-    while (limPIC <= dividendo){
-        result[0] = result[0] + 1;
-        dividendo = dividendo - limPIC;
-    }
-    dividendo = dividendo *10;
-    while (limPIC <= dividendo){
-        result[1] = result[1] +1;
-        dividendo = dividendo - limPIC;
-    }
-    dividendo = dividendo *10;
-    while (limPIC <= dividendo){
-        result[2] = result[2] +1;
-        dividendo = dividendo - limPIC;
-    }
 
-    return(result);
+
+
+void I2C_Master_Wait()
+{
+    while ((SSPSTAT & 0x04) || (SSPCON2 & 0x1F));
+}
+
+
+
+void I2C_Master_Start()
+{
+    I2C_Master_Wait();
+    SSPCON2bits.SEN = 1;
+}
+
+
+
+void I2C_Master_RepeatedStart()
+{
+    I2C_Master_Wait();
+    SSPCON2bits.RSEN = 1;
+}
+
+
+
+void I2C_Master_Stop()
+{
+    I2C_Master_Wait();
+    SSPCON2bits.PEN = 1;
+}
+
+
+
+
+
+void I2C_Master_Write(unsigned d)
+{
+    I2C_Master_Wait();
+    SSPBUF = d;
+}
+
+
+
+
+unsigned short I2C_Master_Read(unsigned short a)
+{
+    unsigned short temp;
+    I2C_Master_Wait();
+    SSPCON2bits.RCEN = 1;
+    I2C_Master_Wait();
+    temp = SSPBUF;
+    I2C_Master_Wait();
+    if(a == 1){
+        SSPCON2bits.ACKDT = 0;
+    }else{
+        SSPCON2bits.ACKDT = 1;
+    }
+    SSPCON2bits.ACKEN = 1;
+    return temp;
+}
+
+
+
+void I2C_Slave_Init(uint8_t address)
+{
+    SSPADD = address;
+    SSPCON = 0x36;
+    SSPSTAT = 0x80;
+    SSPCON2 = 0x01;
+    TRISC3 = 1;
+    TRISC4 = 1;
+    GIE = 1;
+    PEIE = 1;
+    SSPIF = 0;
+    SSPIE = 1;
 }
