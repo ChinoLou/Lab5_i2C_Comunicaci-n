@@ -163,7 +163,7 @@ config 400E 4011 CONFIG 400E 0
 cstackCOMMON 70 79 COMMON 70 1
 %locals
 dist/default/production\Lab5_i2C_Slave1.X.production.o
-C:\Users\Josue\AppData\Local\Temp\s5qk.s
+C:\Users\Josue\AppData\Local\Temp\sqs.s
 806 F 0 CODE 0
 809 F 0 CODE 0
 823 F 0 CODE 0

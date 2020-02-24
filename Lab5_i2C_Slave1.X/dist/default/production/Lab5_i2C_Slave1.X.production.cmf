@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Josue\AppData\Local\Temp\s5qk.o
+$C:\Users\Josue\AppData\Local\Temp\sqs.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 0 2007 2007 2 2
@@ -71,13 +71,13 @@ STRING 150-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Lab5_i2C_Slave1.X.production.o
-F cinit CODE >806:C:\Users\Josue\AppData\Local\Temp\s5qk.s
-F cinit CODE >809:C:\Users\Josue\AppData\Local\Temp\s5qk.s
-F cinit CODE >823:C:\Users\Josue\AppData\Local\Temp\s5qk.s
-10 cinit CODE >824:C:\Users\Josue\AppData\Local\Temp\s5qk.s
-11 cinit CODE >830:C:\Users\Josue\AppData\Local\Temp\s5qk.s
-11 cinit CODE >832:C:\Users\Josue\AppData\Local\Temp\s5qk.s
-12 cinit CODE >833:C:\Users\Josue\AppData\Local\Temp\s5qk.s
+F cinit CODE >806:C:\Users\Josue\AppData\Local\Temp\sqs.s
+F cinit CODE >809:C:\Users\Josue\AppData\Local\Temp\sqs.s
+F cinit CODE >823:C:\Users\Josue\AppData\Local\Temp\sqs.s
+10 cinit CODE >824:C:\Users\Josue\AppData\Local\Temp\sqs.s
+11 cinit CODE >830:C:\Users\Josue\AppData\Local\Temp\sqs.s
+11 cinit CODE >832:C:\Users\Josue\AppData\Local\Temp\sqs.s
+12 cinit CODE >833:C:\Users\Josue\AppData\Local\Temp\sqs.s
 4 intentry CODE >42:C:\Users\Josue\MPLABXProjects\Laboratorios Digitall2\Lab5_i2C_Comunicación\Lab5_i2C_Slave1.X\i2C_Slave1_POT.c
 B3 text4 CODE >42:C:\Users\Josue\MPLABXProjects\Laboratorios Digitall2\Lab5_i2C_Comunicación\Lab5_i2C_Slave1.X\i2C_Slave1_POT.c
 B3 text4 CODE >43:C:\Users\Josue\MPLABXProjects\Laboratorios Digitall2\Lab5_i2C_Comunicación\Lab5_i2C_Slave1.X\i2C_Slave1_POT.c
@@ -266,20 +266,20 @@ __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\Lab5_i2C_Slave1.X.production.
 _BF 4A0 0 ABS 0 - dist/default/production\Lab5_i2C_Slave1.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 _PEIE 5E 0 ABS 0 - dist/default/production\Lab5_i2C_Slave1.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\Josue\AppData\Local\Temp\s5qk.o
+___sp 0 0 STACK 2 stack C:\Users\Josue\AppData\Local\Temp\sqs.o
 _main 1EC 0 CODE 0 maintext dist/default/production\Lab5_i2C_Slave1.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Lab5_i2C_Slave1.X.production.o
-start 18 0 CODE 0 init C:\Users\Josue\AppData\Local\Temp\s5qk.o
+start 18 0 CODE 0 init C:\Users\Josue\AppData\Local\Temp\sqs.o
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\Lab5_i2C_Slave1.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Lab5_i2C_Slave1.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\s5qk.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\s5qk.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\s5qk.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\s5qk.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\s5qk.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\s5qk.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\sqs.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\sqs.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\sqs.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\sqs.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\sqs.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\sqs.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\Lab5_i2C_Slave1.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
@@ -292,8 +292,8 @@ _ANSELH 189 0 ABS 0 - dist/default/production\Lab5_i2C_Slave1.X.production.o
 _SSPCONbits 14 0 ABS 0 - dist/default/production\Lab5_i2C_Slave1.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 __CFG_FOSC$INTRC_CLKOUT 0 0 ABS 0 - dist/default/production\Lab5_i2C_Slave1.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\Josue\AppData\Local\Temp\s5qk.o
-___stacklo 0 0 ABS 0 - C:\Users\Josue\AppData\Local\Temp\s5qk.o
+___stackhi 0 0 ABS 0 - C:\Users\Josue\AppData\Local\Temp\sqs.o
+___stacklo 0 0 ABS 0 - C:\Users\Josue\AppData\Local\Temp\sqs.o
 _init_config 270 0 CODE 0 text1 dist/default/production\Lab5_i2C_Slave1.X.production.o
 _I2C_Slave_Init 23C 0 CODE 0 text2 dist/default/production\Lab5_i2C_Slave1.X.production.o
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\Lab5_i2C_Slave1.X.production.o
@@ -304,7 +304,7 @@ _SSPBUF 13 0 ABS 0 - dist/default/production\Lab5_i2C_Slave1.X.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production\Lab5_i2C_Slave1.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\Lab5_i2C_Slave1.X.production.o
 _TRISC4 43C 0 ABS 0 - dist/default/production\Lab5_i2C_Slave1.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Josue\AppData\Local\Temp\s5qk.o
+___int_sp 0 0 STACK 2 stack C:\Users\Josue\AppData\Local\Temp\sqs.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -351,7 +351,7 @@ __CFG_BOR4V$BOR40V 0 0 ABS 0 - dist/default/production\Lab5_i2C_Slave1.X.product
 saved_w 7E 0 ABS 0 - dist/default/production\Lab5_i2C_Slave1.X.production.o
 __end_of_isr 1EC 0 CODE 0 text4 dist/default/production\Lab5_i2C_Slave1.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Josue\AppData\Local\Temp\s5qk.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Josue\AppData\Local\Temp\sqs.o
 __pmaintext 1EC 0 CODE 0 maintext dist/default/production\Lab5_i2C_Slave1.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 400E 0 CONFIG 0 config -
