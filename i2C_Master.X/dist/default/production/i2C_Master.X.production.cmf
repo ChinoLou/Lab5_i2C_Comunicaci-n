@@ -35,7 +35,7 @@ cstackCOMMON COMMON 1 70 70 E 1
 cstackBANK0 BANK0 1 20 20 C 1
 bssBANK0 BANK0 1 2C 2C 9 1
 strings STRING 0 3 3 14 2
-$C:\Users\Josue\AppData\Local\Temp\sko8.o
+$C:\Users\Josue\AppData\Local\Temp\s8i4.o
 end_init CODE 0 0 0 3 2
 config CONFIG 0 2007 2007 2 2
 # %UNUSED Section
@@ -83,22 +83,22 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\i2C_Master.X.production.o
-7F1 cinit CODE >850:C:\Users\Josue\AppData\Local\Temp\sko8.s
-7F1 cinit CODE >853:C:\Users\Josue\AppData\Local\Temp\sko8.s
-7F1 cinit CODE >873:C:\Users\Josue\AppData\Local\Temp\sko8.s
-7F2 cinit CODE >874:C:\Users\Josue\AppData\Local\Temp\sko8.s
-7F3 cinit CODE >875:C:\Users\Josue\AppData\Local\Temp\sko8.s
-7F4 cinit CODE >876:C:\Users\Josue\AppData\Local\Temp\sko8.s
-7F5 cinit CODE >877:C:\Users\Josue\AppData\Local\Temp\sko8.s
-7F6 cinit CODE >878:C:\Users\Josue\AppData\Local\Temp\sko8.s
-7F7 cinit CODE >879:C:\Users\Josue\AppData\Local\Temp\sko8.s
-7F8 cinit CODE >880:C:\Users\Josue\AppData\Local\Temp\sko8.s
-7F9 cinit CODE >881:C:\Users\Josue\AppData\Local\Temp\sko8.s
-7FA cinit CODE >882:C:\Users\Josue\AppData\Local\Temp\sko8.s
-7FB cinit CODE >883:C:\Users\Josue\AppData\Local\Temp\sko8.s
-7FC cinit CODE >889:C:\Users\Josue\AppData\Local\Temp\sko8.s
-7FC cinit CODE >891:C:\Users\Josue\AppData\Local\Temp\sko8.s
-7FD cinit CODE >892:C:\Users\Josue\AppData\Local\Temp\sko8.s
+7F1 cinit CODE >850:C:\Users\Josue\AppData\Local\Temp\s8i4.s
+7F1 cinit CODE >853:C:\Users\Josue\AppData\Local\Temp\s8i4.s
+7F1 cinit CODE >873:C:\Users\Josue\AppData\Local\Temp\s8i4.s
+7F2 cinit CODE >874:C:\Users\Josue\AppData\Local\Temp\s8i4.s
+7F3 cinit CODE >875:C:\Users\Josue\AppData\Local\Temp\s8i4.s
+7F4 cinit CODE >876:C:\Users\Josue\AppData\Local\Temp\s8i4.s
+7F5 cinit CODE >877:C:\Users\Josue\AppData\Local\Temp\s8i4.s
+7F6 cinit CODE >878:C:\Users\Josue\AppData\Local\Temp\s8i4.s
+7F7 cinit CODE >879:C:\Users\Josue\AppData\Local\Temp\s8i4.s
+7F8 cinit CODE >880:C:\Users\Josue\AppData\Local\Temp\s8i4.s
+7F9 cinit CODE >881:C:\Users\Josue\AppData\Local\Temp\s8i4.s
+7FA cinit CODE >882:C:\Users\Josue\AppData\Local\Temp\s8i4.s
+7FB cinit CODE >883:C:\Users\Josue\AppData\Local\Temp\s8i4.s
+7FC cinit CODE >889:C:\Users\Josue\AppData\Local\Temp\s8i4.s
+7FC cinit CODE >891:C:\Users\Josue\AppData\Local\Temp\s8i4.s
+7FD cinit CODE >892:C:\Users\Josue\AppData\Local\Temp\s8i4.s
 38B text17 CODE >32:C:\Users\Josue\MPLABXProjects\Laboratorios Digitall2\Lab5_i2C_Comunicación\i2C_Master.X\I2C.c
 38B text17 CODE >34:C:\Users\Josue\MPLABXProjects\Laboratorios Digitall2\Lab5_i2C_Comunicación\i2C_Master.X\I2C.c
 397 text17 CODE >35:C:\Users\Josue\MPLABXProjects\Laboratorios Digitall2\Lab5_i2C_Comunicación\i2C_Master.X\I2C.c
@@ -334,11 +334,11 @@ __size_of_LCD_iniciar 0 0 ABS 0 - dist/default/production\i2C_Master.X.productio
 _LCD_CURSOR 898 0 CODE 0 text10 dist/default/production\i2C_Master.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 _PEIE 5E 0 ABS 0 - dist/default/production\i2C_Master.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\Josue\AppData\Local\Temp\sko8.o
+___sp 0 0 STACK 2 stack C:\Users\Josue\AppData\Local\Temp\s8i4.o
 _main DEE 0 CODE 0 maintext dist/default/production\i2C_Master.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\i2C_Master.X.production.o
 _uint_to_char B80 0 CODE 0 text1 dist/default/production\i2C_Master.X.production.o
-start 0 0 CODE 0 init C:\Users\Josue\AppData\Local\Temp\sko8.o
+start 0 0 CODE 0 init C:\Users\Josue\AppData\Local\Temp\s8i4.o
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\i2C_Master.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\i2C_Master.X.production.o
 __size_of___lldiv 0 0 ABS 0 - dist/default/production\i2C_Master.X.production.o
@@ -350,12 +350,12 @@ __Hpowerup 0 0 CODE 0 powerup -
 I2C_Master_Read@a 70 0 COMMON 1 cstackCOMMON dist/default/production\i2C_Master.X.production.o
 __end_of_LCD_CHAR 74E 0 CODE 0 text9 dist/default/production\i2C_Master.X.production.o
 __end_of_LCD_DATO 804 0 CODE 0 text12 dist/default/production\i2C_Master.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\sko8.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\sko8.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\sko8.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\sko8.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\sko8.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\sko8.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\s8i4.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\s8i4.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\s8i4.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\s8i4.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\s8i4.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Josue\AppData\Local\Temp\s8i4.o
 mapeo@limPIC 76 0 COMMON 1 cstackCOMMON dist/default/production\i2C_Master.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\i2C_Master.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
@@ -378,8 +378,8 @@ LCD_CURSOR@b 76 0 COMMON 1 cstackCOMMON dist/default/production\i2C_Master.X.pro
 LCD_CURSOR@d 78 0 COMMON 1 cstackCOMMON dist/default/production\i2C_Master.X.production.o
 __end_of___lldiv A82 0 CODE 0 text4 dist/default/production\i2C_Master.X.production.o
 __CFG_FOSC$INTRC_CLKOUT 0 0 ABS 0 - dist/default/production\i2C_Master.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\Josue\AppData\Local\Temp\sko8.o
-___stacklo 0 0 ABS 0 - C:\Users\Josue\AppData\Local\Temp\sko8.o
+___stackhi 0 0 ABS 0 - C:\Users\Josue\AppData\Local\Temp\s8i4.o
+___stacklo 0 0 ABS 0 - C:\Users\Josue\AppData\Local\Temp\s8i4.o
 __size_of_mapeo 0 0 ABS 0 - dist/default/production\i2C_Master.X.production.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\i2C_Master.X.production.o
 ___lldiv@counter 7D 0 COMMON 1 cstackCOMMON dist/default/production\i2C_Master.X.production.o
@@ -399,7 +399,7 @@ _TRISC3 43B 0 ABS 0 - dist/default/production\i2C_Master.X.production.o
 _TRISC4 43C 0 ABS 0 - dist/default/production\i2C_Master.X.production.o
 _LCD_iniciar A82 0 CODE 0 text7 dist/default/production\i2C_Master.X.production.o
 __end_of_LCD_CLEAR 782 0 CODE 0 text11 dist/default/production\i2C_Master.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Josue\AppData\Local\Temp\sko8.o
+___int_sp 0 0 STACK 2 stack C:\Users\Josue\AppData\Local\Temp\s8i4.o
 mapeo@valor 20 0 BANK0 1 cstackBANK0 dist/default/production\i2C_Master.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
@@ -455,7 +455,7 @@ _I2C_Master_Write 702 0 CODE 0 text13 dist/default/production\i2C_Master.X.produ
 __Lintentry 0 0 CODE 0 intentry -
 ___lldiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\i2C_Master.X.production.o
 __stringtab 6 0 STRING 0 strings dist/default/production\i2C_Master.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Josue\AppData\Local\Temp\sko8.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Josue\AppData\Local\Temp\s8i4.o
 __size_of___wmul 0 0 ABS 0 - dist/default/production\i2C_Master.X.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __ptext10 898 0 CODE 0 text10 dist/default/production\i2C_Master.X.production.o

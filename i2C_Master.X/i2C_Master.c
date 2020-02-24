@@ -1,7 +1,7 @@
 /*
  * File:   i2C_Master.c
  * Author: Josué Castillo Lou
- * Laboratorio No.5: Comunicación I2C Master-LCD a 3 Pic´s Esclavos.
+ * Laboratorio No.5: Comunicación I2C Master-LCD a 3 Pic´s Esclavos. (2Esclavos Listos!)
  * Created on 23 de febrero de 2020, 02:13 PM
  */
 
