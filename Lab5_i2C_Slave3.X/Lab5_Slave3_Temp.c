@@ -1,7 +1,7 @@
 /*
  * File:   i2C_Slave1_POT.c
  * Author: Josué Castillo Lou / Carné: 17169
- * Slave No.3: envia los datos del ADC del LM35 al PICMaster através del i2C Listo!!
+ * Slave No.3: envia los datos del ADC del LM35 al PICMaster através del i2C Listo!!!
  * Created on 23 de febrero de 2020, 03:54 PM
  */
 
