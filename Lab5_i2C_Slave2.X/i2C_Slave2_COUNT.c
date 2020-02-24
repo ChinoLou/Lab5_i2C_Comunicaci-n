@@ -1,7 +1,7 @@
 /*
  * File:   i2C_Slave2_COUNT.c
  * Author: Josué Castillo Lou / Carné: 17169
- * Slave No. 2: envia los datos del contador al PIC MASTER!
+ * Slave No. 2: envia los datos del contador al PIC MASTER! (Listo!)
  * Created on 24 de febrero de 2020, 12:08 PM
  */
 

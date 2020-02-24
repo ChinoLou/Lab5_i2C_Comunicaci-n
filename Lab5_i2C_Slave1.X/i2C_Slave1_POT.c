@@ -1,7 +1,7 @@
 /*
  * File:   i2C_Slave1_POT.c
  * Author: Josué Castillo Lou / Carné: 17169
- * Slave No. 1: envia los datos del ADC del Potenciómetro al PIC MASTER!
+ * Slave No. 1: envia los datos del ADC del Potenciómetro al PIC MASTER! (Listo!)
  * Created on 23 de febrero de 2020, 03:54 PM
  */
 
